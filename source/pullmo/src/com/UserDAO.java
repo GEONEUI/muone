@@ -6,13 +6,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Vector;
 
-import jdk.internal.dynalink.support.TypeUtilities;
 
 public class UserDAO {
 	
 	String id = "root";
 	String pw = "mysql";
-	String url = "jdbc:mysql://localhost:3306/fullmo";
+	String url = "jdbc:mysql://localhost:3306/pullmo";
 	
 	Connection conn;
 	PreparedStatement pstmt;
