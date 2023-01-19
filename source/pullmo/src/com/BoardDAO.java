@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.util.Vector;
 
 public class BoardDAO {
+
 		String id = "root";
 		String pw = "mysql";
 		String url = "jdbc:mysql://localhost:3306/pullmo";
