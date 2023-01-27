@@ -5,10 +5,10 @@
    pageEncoding="UTF-8"%>
 
 <%
-   request.setCharacterEncoding("UTF-8");
-   String id=(String) session.getAttribute("id");
-   ProductDAO pdao = new ProductDAO();
-   Vector<ProductDTO> list = pdao.selectAll();
+request.setCharacterEncoding("UTF-8");
+String id=(String) session.getAttribute("id");
+ProductDAO pdao = new ProductDAO();
+Vector<ProductDTO> list = pdao.selectAll();
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -142,33 +142,35 @@
                            type="radio" value="low-price" name="priceD"><span>낮은가격</span></label>
                      </div>
 
-                  </div>
-               </div>
-               <ul class="product-list">
-               <%
-                  for (int i = 0; i < 7; i++) {
-                     ProductDTO dto = list.get(16 + i);
-               %>
-                  <li class="product"><img class="imgg"
-                     src="<%=dto.getMainimg()%>" />
-                     <div class="c-infor">
-                        <span class="goods-brand"><b><%=dto.getCategory()%></b></span>
-                        <span class="goods-name"><%=dto.getName()%></span>
-                        <div class="price-cost"></div>
-                        <span class="goods-price"><b><%=dto.getPrice()%></b>원</span>
-                        <div class="goods-delfree">무료배송</div>
-                        <button class="add-cart">
-                           <img src="./image/showcart.png" alt="" class="cart">
-                        </button>
-                     </div></li>
-               <%
-                  }
-               %>
-               </ul>
-            </div>
-            <!-- #tab2 --> <!-- #tab3 -->
-            <div id="tab3" class="tab_content">
-               <div class="result-header">
+						</div>
+					</div>
+					<ul class="product-list">
+					<%
+						for (int i = 0; i < 7; i++) {
+							ProductDTO dto = list.get(16 + i);
+					%>
+						<li class="product"><img class="imgg"
+							src="<%=dto.getMainimg()%>" />
+							<div class="c-infor">
+								<span class="goods-brand"><b><%=dto.getCategory()%></b></span>
+								<span class="goods-name"><%=dto.getName()%></span>
+								<div class="price-cost"></div>
+								<span class="goods-price"><b><%=dto.getPrice()%></b>원</span>
+								<div class="goods-delfree">무료배송</div>
+								<form action="dailyProc.jsp" name="num" value="<%=dto.getNum()%>">
+									<button class="add-cart">
+										<img src="./image/showcart.png" alt="" class="cart">
+									</button>
+								</form>
+							</div></li>
+					<%
+						}
+					%>
+					</ul>
+				</div>
+				<!-- #tab2 --> <!-- #tab3 -->
+				<div id="tab3" class="tab_content">
+					<div class="result-header">
 
                   <div class="result-total">
                      총<span class="count">11</span>개
@@ -180,25 +182,27 @@
                            type="radio" value="low-price" name="priceB"><span>낮은가격</span></label>
                      </div>
 
-                  </div>
-               </div>
-               <ul class="product-list">
-               <%
-                  for (int i = 0; i < 11; i++) {
-                     ProductDTO dto = list.get(23 + i);
-               %>
-                  <li class="product"><img class="imgg"
-                     src="<%=dto.getMainimg()%>" />
-                     <div class="c-infor">
-                        <span class="goods-brand"><b><%=dto.getCategory()%></b></span>
-                        <span class="goods-name"><%=dto.getName()%></span>
-                        <div class="price-cost"></div>
-                        <span class="goods-price"><b><%=dto.getPrice()%></b>원</span>
-                        <div class="goods-delfree">무료배송</div>
-                        <button class="add-cart">
-                           <img src="./image/showcart.png" alt="" class="cart">
-                        </button>
-                     </div></li>
+						</div>
+					</div>
+					<ul class="product-list">
+					<%
+						for (int i = 0; i < 11; i++) {
+							ProductDTO dto = list.get(23 + i);
+					%>
+						<li class="product"><img class="imgg"
+							src="<%=dto.getMainimg()%>" />
+							<div class="c-infor">
+								<span class="goods-brand"><b><%=dto.getCategory()%></b></span>
+								<span class="goods-name"><%=dto.getName()%></span>
+								<div class="price-cost"></div>
+								<span class="goods-price"><b><%=dto.getPrice()%></b>원</span>
+								<div class="goods-delfree">무료배송</div>
+								<form action="dailyProc.jsp" name="num" value="<%=dto.getNum()%>">
+									<button class="add-cart">
+										<img src="./image/showcart.png" alt="" class="cart">
+									</button>
+								</form>
+							</div></li>
 
                <%
                   }
